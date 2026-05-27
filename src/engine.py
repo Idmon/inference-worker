@@ -27,8 +27,8 @@ from openai import OpenAI
 from utils import JobInput
 
 client = OpenAI(
-    base_url="http://localhost:3098/v1/",
-    api_key="",
+    base_url=os.getenv("LLAMA_CPP_BASE_URL", "http://localhost:3098/v1"),
+    api_key=os.getenv("OPENAI_API_KEY") or "sk-local",
 )
 
 
